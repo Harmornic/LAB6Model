@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://ctiek8kud4g8l"]
+
+[ext_resource type="Script" uid="uid://bwodaaggdd6dt" path="res://assets/demo.gd" id="1_amuei"]
+[ext_resource type="PackedScene" uid="uid://bh8jmq0t00kh4" path="res://assets/Walking.tscn" id="1_s02n5"]
+[ext_resource type="PackedScene" uid="uid://ck2ek58israj8" path="res://assets/Forest Hut.glb" id="3_e6to4"]
+
+[sub_resource type="Sky" id="Sky_e6to4"]
+
+[sub_resource type="Environment" id="Environment_457xp"]
+sky = SubResource("Sky_e6to4")
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_amuei")
+
+[node name="Walking" parent="." instance=ExtResource("1_s02n5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.1288, 0.758027, -1.17933)
+
+[node name="Walking2" parent="." instance=ExtResource("1_s02n5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.04917, 0.758027, -1.17933)
+
+[node name="Walking3" parent="." instance=ExtResource("1_s02n5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1254, 0.758027, -1.17933)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.955546, 0, -0.294841, 0, 1, 0, 0.294841, 0, 0.955546, -18.9896, 16.1642, 47.4676)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.878967, 0, -0.476883, 0.0907729, 0.981717, 0.167308, 0.468164, -0.190346, 0.862897, -14.7479, 25.3171, 14.6935)
+
+[node name="Forest Hut" parent="." instance=ExtResource("3_e6to4")]
+transform = Transform3D(-2.06396, 0, 17.8386, 0, 17.0457, 0, -19.114, 0, -1.92623, -2.55731, 28.0225, -29.2711)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_457xp")
